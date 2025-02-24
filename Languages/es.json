@@ -1,0 +1,17 @@
+{
+    "header": {
+        "about-me": "Sobre mí",
+        "projects": "Proyectos",
+        "services": "Servicios",
+        "Contact": "Contacto"
+    },
+    "float":{
+        "mensage": "¡Escríbeme un Mensaje 💬!" 
+    },
+    "footer":{
+        "about-me": "SOBRE MÍ",
+        "description": "Estudiante de Ingeniería en Sistemas, proactivo, creativo, aprende rápido, desarrolla software sostenible.",
+        "follow": "SIGUEME",
+        "copy": "© 2025 Edwin Santiago - Todos los Derechos Reservados"
+    }
+}
