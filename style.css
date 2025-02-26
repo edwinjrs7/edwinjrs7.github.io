@@ -261,9 +261,8 @@ body.active .contacto .container{
     text-align: center;
     box-shadow: 2px 2px 3px rgb(0, 0, 0,0.1);
     z-index: 999;
-    /* display: flex;
     align-items: center;
-    justify-content: center; */
+    justify-content: center; 
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 44px;
