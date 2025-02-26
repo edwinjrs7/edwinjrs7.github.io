@@ -8,6 +8,15 @@
     "float":{
         "mensage": "¡Escríbeme un Mensaje 💬!" 
     },
+    "contact-form":{
+        "header": "Contacto",
+        "name": "Nombre",
+        "email": "Correo Electrónico",
+        "message": "Mensaje",
+        "Input-name": "Ingresa Tu Nombre",
+        "Input-email": "Ingresa tu dirección de correo",
+        "Input-message": "Ingresa tu Mensaje"
+    },
     "footer":{
         "about-me": "SOBRE MÍ",
         "description": "Estudiante de Ingeniería en Sistemas, proactivo, creativo, aprende rápido, desarrolla software sostenible.",

@@ -30,7 +30,7 @@ const bandera = document.querySelector("#bandera");
 const banderaColombia = "images/svg/colombia.svg";
 const banderaUSA = "images/svg/USA.svg";
 const textToChange = document.querySelectorAll("[data-section]")
-
+const inputChange = document.querySelectorAll("[data-placeholder]")
 let esbanderaColombia = true;
 
 function cambiarBandera(){
@@ -64,8 +64,17 @@ function cambiarIdioma(idioma){
                 el.innerHTML = data[section][value];
             }
         });
+
+        inputChange.forEach((input)=>{
+            const section = input.dataset.section;
+            const value = input.dataset.placeholder;
+
+            if(data[section] && data[section][value]){
+                input.placeholder = data[section][value];
+            }
+        })
     })
-    // .catch(error => console.error("Error al cargar el archivo de idioma:", error));
+    .catch(error => console.error("Error al cargar el archivo de idioma:", error));
 }
 
 bandera.addEventListener("click", cambiarBandera);

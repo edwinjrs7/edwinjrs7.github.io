@@ -298,8 +298,6 @@ body.active .contacto .container{
 /* formulario de contactos */
 
 .contacto{
-    height: 100vh;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -310,10 +308,32 @@ body.active .contacto .container{
 .contacto .container{
     background-color: var(--menu-color);
     border-radius: 10px;
-    padding: 2rem;
+    padding: 4rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 700px;
+    max-width: 50rem;
+    margin: 6rem;
+}
+.contacto .container form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.form-group label{
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #4b5563;
+}
+.form-group .contact-form-input{
+    padding: 2rem;
+    height: 3.5rem;
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.form-group #message{
+    height: auto;
 }
 
 @media screen and (max-width: 780px){
@@ -350,6 +370,11 @@ body.active .contacto .container{
         display: block;
         font-size: 2rem;
         cursor: pointer;
+    }
+
+    .contacto .container{
+        margin: 3rem;
+        padding: 3rem;
     }
 
     footer .grupo1{

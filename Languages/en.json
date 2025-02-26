@@ -1,14 +1,23 @@
 {
-    "header":{
+    "header": {
         "about-me": "About me",
         "projects": "Projects",
         "services": "Services",
         "Contact": "Contact"
     },
-    "float":{
-        "mensage": "¡Send me a Mensage 💬!" 
+    "float": {
+        "mensage": "¡Send me a Mensage 💬!"
     },
-    "footer":{
+    "contact-form": {
+        "header":"Contact",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "Input-name": "Enter your Name",
+        "Input-email": "Enter your Email",
+        "Input-message": "Enter your Message"
+    },
+    "footer": {
         "about-me": "ABOUT ME",
         "description": "Systems Engineering student, proactive, creative, fast learner, develops sustainable software.",
         "follow": "FOLLOW ME",
