@@ -6,16 +6,25 @@
         "Contact": "Contact"
     },
     "float": {
-        "mensage": "¡Send me a Mensage 💬!"
+        "mensage": "¡Send me a Message 💬!"
+    },
+    "about-me": {
+        "section":"About Me",
+        "title": "Full Stack Developer",
+        "description":"Systems Engineering student, with solid knowledge in software development and experience in academic projects using various technologies. Passionate about creating technological solutions that optimize processes and promote sustainability. I am a proactive, dynamic, creative person, with a strong orientation towards continuous learning skills in the development of modern web applications.",
+        "skills": "Skills",
+        "skills-descriptions": "I am specialized in the following front-end and back-end technologies"
     },
     "contact-form": {
         "header":"Contact",
+        "sentence": "Looking to take your idea or project to the next level? Contact me for a free consultation and find out how I can help you make it happen.",
         "name": "Name",
         "email": "Email",
         "message": "Message",
         "Input-name": "Enter your Name",
         "Input-email": "Enter your Email",
-        "Input-message": "Enter your Message"
+        "Input-message": "Enter your Message",
+        "bottom": "Send"
     },
     "footer": {
         "about-me": "ABOUT ME",

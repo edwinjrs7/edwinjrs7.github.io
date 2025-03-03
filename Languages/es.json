@@ -5,19 +5,28 @@
         "services": "Servicios",
         "Contact": "Contacto"
     },
-    "float":{
-        "mensage": "¡Escríbeme un Mensaje 💬!" 
+    "float": {
+        "mensage": "¡Escríbeme un Mensaje 💬!"
     },
-    "contact-form":{
+    "about-me": {
+        "section":"Sobre MÍ",
+        "title": "Desarrollador Full Stack",
+        "description":"Estudiante de Ingeniería de sistemas, con sólidos conocimientos en desarrollo de software y experiencia en proyectos académicos utilizando diversas tecnologías. Apasionado por la creación de soluciones tecnológicas que optimicen procesos y fomenten la sostenibilidad. Soy una persona proactiva, dinámica, creativa, con una fuerte orientación hacia el aprendizaje continuo habilidades en el desarrollo de aplicaciones web modernas.",
+        "skills": "Habilidades",
+        "skills-descriptions": "Estoy especializado con las siguientes tecnologias tanto front-end como back-end"
+    },
+    "contact-form": {
         "header": "Contacto",
+        "sentence": "¿Buscas llevar tu idea o proyecto al siguiente nivel? Contáctame para una asesoría gratuita y descubre cómo puedo ayudarte a hacerlo realidad",
         "name": "Nombre",
         "email": "Correo Electrónico",
         "message": "Mensaje",
         "Input-name": "Ingresa Tu Nombre",
         "Input-email": "Ingresa tu dirección de correo",
-        "Input-message": "Ingresa tu Mensaje"
+        "Input-message": "Ingresa tu Mensaje",
+        "bottom": "Enviar"
     },
-    "footer":{
+    "footer": {
         "about-me": "SOBRE MÍ",
         "description": "Estudiante de Ingeniería en Sistemas, proactivo, creativo, aprende rápido, desarrolla software sostenible.",
         "follow": "SIGUEME",
