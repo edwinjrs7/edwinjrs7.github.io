@@ -23,7 +23,7 @@
         <nav class="navbar" id="nav">
             <button class="abrir-menu" id="cerrar"><i class='bx bx-x'></i></button>
             <ul>
-                <li><a href="" data-section="header" data-value="about-me">Sobre mí</a></li>
+                <li><a href="#about" data-section="header" data-value="about-me">Sobre mí</a></li>
                 <li><a href="" data-section="header" data-value="projects">Proyectos</a></li>
                 <li><a href="" data-section="header" data-value="services">Servicios</a></li>
                 <li><a href="#contact" data-section="header" data-value="Contact">Contacto</a></li>
@@ -59,12 +59,48 @@
             <img src="imagenes/F5Yh4ygzBe6GlT58zNPyI-transformed.png" alt="" height="500" width="400">
         </div>
     </section>
+    <section id="about" class="about">
+        <div class="about-header">
+            <div class="perfil-image">
+                <img src="images/Logo De Edwin Santiago.png" alt="">
+            </div>
+            <div class="about-title">
+                <h1>Edwin Junior Santiago Padilla</h1>
+                <h2 data-section="about-me" data-value="title">Desarrollador Full Stack</h2>
+            </div>
+        </div>
+        <div class="about-content">
+            <div class="main-info">
+                <div class="about-me">
+                    <h3 class="title-description" data-section="about-me" data-value="section">Sobre mí</h3>
+                    <p data-section="about-me" data-value="description">Estudiante de Ingeniería de sistemas, con sólidos conocimientos en desarrollo de software y
+                        experiencia en proyectos académicos utilizando diversas tecnologías. Apasionado por la creación
+                        de soluciones tecnológicas que optimicen procesos y fomenten la sostenibilidad. Soy una persona
+                        proactiva, dinámica, creativa, con una fuerte orientación hacia el aprendizaje continuo y
+                        habilidades en el desarrollo de aplicaciones web modernas.</p>
+                </div>
+            </div>
+            <div class="side-info">
+                <h3 class="title-description" data-section="about-me" data-value="skills">Habilidades</h3>
+                <p data-section="about-me" data-value="skills-descriptions">Estoy especializado con las siguientes tecnologias tanto front-end como back-end
+                </p>
+                <div class="skills-list">
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">Django</div>
+                    <div class="skill-tag">Flask</div>
+                    <div class="skill-tag">PHP</div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="contact" class="contacto">
         <div class="main-container">
             <h2 class="heading heading-sc heading-sec__mb-med">
-                <span class="heading-sec__main heading-sec__main--lt" data-section="contact-form" data-value="header">Contacto</span>
-                <span class="heading-sec__sub heading-sec__sub--lt" >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. A assumenda nobis, placeat, at ipsum tenetur dolorem harum labore commodi nostrum sed quisquam laboriosam excepturi tempore fugit quia. Corrupti, laboriosam praesentium.
+                <span class="heading-sec__main heading-sec__main--lt" data-section="contact-form"
+                    data-value="header">Contacto</span>
+                <span class="heading-sec__sub heading-sec__sub--lt" data-section="contact-form" data-value="sentence">
+                    ¿Buscas llevar tu idea o proyecto al siguiente nivel? Contáctame para una asesoría gratuita y
+                    descubre cómo puedo ayudarte a hacerlo realidad.
                 </span>
             </h2>
         </div>
@@ -88,11 +124,11 @@
                             placeholder="Ingresa tu Mensaje" data-section="contact-form"
                             data-placeholder="Input-email"></textarea>
                     </div>
+                    <button type="submit" class="btn-form" data-section="contact-form"
+                        data-value="bottom">Enviar</button>
                 </form>
             </div>
         </div>
-
-        
     </section>
     <footer>
         <div class="grupo1">
