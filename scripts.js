@@ -1,80 +1,117 @@
-//menubar
+import { logoData } from "./logo.js";
 
-const nav = document.querySelector("#nav");
-const abrir = document.querySelector("#abrir");
-const cerrar = document.querySelector("#cerrar");
-const swith = document.querySelector(".switch");
+import gsap from "https://cdn.skypack.dev/gsap";
+import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
 
+// import Lenis from "@studio-freight/lenis/types";
 
-swith.addEventListener("click", e =>{
-    swith.classList.toggle("active");
-    document.body.classList.toggle("active");
-})
+gsap.registerPlugin(ScrollTrigger);
 
-abrir.addEventListener("click", () =>{
-    nav.classList.add("visible");
-})
+document.addEventListener("DOMContentLoaded", () => {
+  const lenis = new Lenis();
+  lenis.on("scroll", ScrollTrigger.update);
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
 
-cerrar.addEventListener("click", ()=>{
-    nav.classList.remove("visible");
-})
+  const heroImgContainer = document.querySelector(".hero-img-container");
+  const heroImgLogo = document.querySelector(".hero-img-logo");
+  const heroImgCopy = document.querySelector(".hero-img-copy")
+  const fadeOverlay = document.querySelector(".fade-overlay")
+  const svgOverlay = document.querySelector(".overlay");
+  const overlayCopy = document.querySelector("h1");
 
-window.addEventListener("scroll", function(){
-    var header = document.querySelector("header");
-    header.classList.toggle("abajo", window.scrollY > 0)
-})
+  const initialOverlayScale = 350;
+  const logoContainer = document.querySelector(".logo-container");
+  const logoMask = document.getElementById("logoMask");
+  console.log(logoMask)
+  
+  
+  logoMask.setAttribute("d",logoData);
+ 
 
+  const logoDimensions = logoContainer.getBoundingClientRect();
+  const logoBoundingBox = logoMask.getBBox();
 
-//selector de idiomas
-const bandera = document.querySelector("#bandera");
-const banderaColombia = "images/svg/colombia.svg";
-const banderaUSA = "images/svg/USA.svg";
-const textToChange = document.querySelectorAll("[data-section]")
-const inputChange = document.querySelectorAll("[data-placeholder]")
-let esbanderaColombia = true;
+  const horizontalScaleRatio = logoDimensions.width / logoBoundingBox.width;
+  
+  const verticalScaleRatio = logoDimensions.height / logoBoundingBox.height;
 
-function cambiarBandera(){
+  const logoScaleFactor = Math.min(horizontalScaleRatio, verticalScaleRatio);
 
-    let idioma = "es";
+  const logoHorizontalPosition = logoDimensions.left + (logoDimensions.width - logoBoundingBox.width * logoScaleFactor) / 2 - logoBoundingBox.x * logoScaleFactor;
 
-    if(esbanderaColombia){
-        bandera.src = banderaUSA;
-        bandera.alt = "bandera de USA";
-        idioma = "en";
-    }else{
-        bandera.src = banderaColombia;
-        bandera.alt = "bandera de Colombia";
-        idioma = "es";
-    }
+  const logoVerticalPosition = logoDimensions.top + (logoDimensions.height - logoBoundingBox.height * logoScaleFactor) / 2 - logoBoundingBox.y * logoScaleFactor;
 
-    esbanderaColombia = !esbanderaColombia
-    
-    cambiarIdioma(idioma)
-}
+  logoMask.setAttribute("transform",`translate(${logoHorizontalPosition}, ${logoVerticalPosition}) scale(${logoScaleFactor})`);
+  
+  ScrollTrigger.create({
+    trigger: ".hero",
+    start: "top top",
+    end: `${window.innerHeight * 5}px`,
+    pin: true,
+    pinSpacing: true,
+    scrub: 1,
+    onUpdate: (self) => {
+      const scrollProgress = self.progress;
+      const fadeOpacity = 1 - scrollProgress * (1 / 0.15);
 
-function cambiarIdioma(idioma){
-    fetch(`../Languages/${idioma}.json`)
-    .then(res => res.json())
-    .then(data => {
-        textToChange.forEach((el) =>{
-            const section = el.dataset.section;
-            const value = el.dataset.value;
+      if (scrollProgress <= 0.15){
+        gsap.set([heroImgLogo, heroImgCopy], {
+          opacity: fadeOpacity,
+        });
+      }else{
+        gsap.set([heroImgLogo, heroImgCopy], {
+          opacity: 0,
+        });
+      }
 
-            if(data[section] && data[section][value]){
-                el.innerHTML = data[section][value];
-            }
+      if (scrollProgress <= 0.85){
+        const normalizedProgress = scrollProgress * (1 / 0.85);
+        const heroImgContainerScale = 1.5 - 0.5 * normalizedProgress;
+        const overlayScale = initialOverlayScale * Math.pow(1 / initialOverlayScale, normalizedProgress);
+       
+        let fadeOverlayOpacity = 0;
+
+        gsap.set(heroImgContainer, {
+          scale: heroImgContainerScale,
         });
 
-        inputChange.forEach((input)=>{
-            const section = input.dataset.section;
-            const value = input.dataset.placeholder;
+        gsap.set(svgOverlay, {
+          scale: overlayScale,
+        });
 
-            if(data[section] && data[section][value]){
-                input.placeholder = data[section][value];
-            }
+        if (scrollProgress >= 0.25){
+          fadeOverlayOpacity = Math.min(1, (scrollProgress - 0.25) * (1 / 0.4));
+        }
+
+        gsap.set(fadeOverlay, {
+          opacity: fadeOverlayOpacity,
+        });
+      }
+
+      if (scrollProgress >= 0.6 && scrollProgress <= 0.85){
+        const overlayCopyRevealProgress = (scrollProgress - 0.6) * (1 / 0.25);
+
+        const gradientSpread = 100;
+        const gradientBottomPosition = 240 - overlayCopyRevealProgress * 280;
+        const gradientTopPosition = gradientBottomPosition - gradientSpread;
+        const overlayCopyScale = 1.25 - 0.25 * overlayCopyRevealProgress;
+
+        overlayCopy.style.background = `linear-gradient(to bottom, #111117 0%, #111117 ${gradientTopPosition}%, #e66461 ${gradientBottomPosition}%, #e66461 100%)`;
+        overlayCopy.style.backgroundClip = "text";
+
+        gsap.set(overlayCopy, {
+          scale: overlayCopyScale,
+          opacity: overlayCopyRevealProgress,
+        });
+      } else if (scrollProgress < 0.6){
+        gsap.set(overlayCopy, {
+          opacity: 0,
         })
-    })
-    .catch(error => console.error("Error al cargar el archivo de idioma:", error));
-}
+      }
+    }
+  })
 
-bandera.addEventListener("click", cambiarBandera);
+});

@@ -12,153 +12,49 @@
 </head>
 
 <body>
-    <a href="https://wa.link/0v562w" target="_blank" class="float">
-        <i class='bx bxl-whatsapp' id="whatsapp"></i>
-    </a>
-    <div class="tooltip" data-section="float" data-value="mensage">¡Escríbeme un Mensaje 💬!</div>
 
-    <header>
-        <a href="" class="logo"><img src="images/Logo De Edwin Santiago.png" alt="" width="60" height="60"> </a>
-        <button class="abrir-menu" id="abrir"><i class='bx bx-menu'></i></button>
-        <nav class="navbar" id="nav">
-            <button class="abrir-menu" id="cerrar"><i class='bx bx-x'></i></button>
-            <ul>
-                <li><a href="#about" data-section="header" data-value="about-me">Sobre mí</a></li>
-                <li><a href="" data-section="header" data-value="projects">Proyectos</a></li>
-                <li><a href="" data-section="header" data-value="services">Servicios</a></li>
-                <li><a href="#contact" data-section="header" data-value="Contact">Contacto</a></li>
-                <li><img id="bandera" src="images/svg/colombia.svg" alt="Bandera de colombia" width="30px"
-                        data-language="es"></li>
-                <li class="switch">
-                    <i class='bx bxs-sun'></i>
-                    <i class='bx bxs-moon'></i>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>
-                Hola!. Me llamo
-            </h3>
-            <h1>Edwin Junior Santiago</h1>
-            <h3>Y soy <span class="multiple-text"></span></h3>
-            <div class="social-media">
-                <a href="https://github.com/edwinjrs7"><i class='bx bxl-github'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="https://www.instagram.com/edwinjrs17/"><i class='bx bxl-instagram'></i></a>
-                <a href="https://www.linkedin.com/in/edwin-santiago-893560209/"><i class='bx bxl-linkedin'></i></a>
-                <br>
+    <section class="hero">
+        <div class="hero-img-container">
+            <img src="images/portada.png" alt="">
+
+            <div class="hero-img-logo">
+                <img src="images/EDWIN JUNIOR SANTIAGO.png" alt="">
+            </div>
+
+            <img src="images/sin-fondo.png" alt="">
+
+            <div class="hero-img-copy">
+                <p>Scroll down to reveal</p>
             </div>
         </div>
-        <div class="home-container">
-            <div class="overlay"></div>
-        </div>
+        <div class="fade-overlay"></div>
 
-        <div class="home-img">
-            <img src="imagenes/F5Yh4ygzBe6GlT58zNPyI-transformed.png" alt="" height="500" width="400">
+        <div class="overlay">
+            <svg width="100%" height="100%">
+                <defs>
+                    <mask id="logoRevealMask">
+                        <rect width="100%" height="100%" fill="white" />
+                        <path id="logoMask"></path>
+                    </mask>
+                </defs>
+                <rect width="100%" height="100%" fill="#111117" mask="url(#logoRevealMask)" />
+            </svg>
+        </div>
+        <div class="logo-container">
+
+        </div>
+        <div class="overlay-copy">
+            <h1>La creatividad <br>
+                Funcionalidad <br>
+                a tu alcance.</h1>
         </div>
     </section>
-    <section id="about" class="about">
-        <div class="about-header">
-            <div class="perfil-image">
-                <img src="images/Logo De Edwin Santiago.png" alt="">
-            </div>
-            <div class="about-title">
-                <h1>Edwin Junior Santiago Padilla</h1>
-                <h2 data-section="about-me" data-value="title">Desarrollador Full Stack</h2>
-            </div>
-        </div>
-        <div class="about-content">
-            <div class="main-info">
-                <div class="about-me">
-                    <h3 class="title-description" data-section="about-me" data-value="section">Sobre mí</h3>
-                    <p data-section="about-me" data-value="description">Estudiante de Ingeniería de sistemas, con sólidos conocimientos en desarrollo de software y
-                        experiencia en proyectos académicos utilizando diversas tecnologías. Apasionado por la creación
-                        de soluciones tecnológicas que optimicen procesos y fomenten la sostenibilidad. Soy una persona
-                        proactiva, dinámica, creativa, con una fuerte orientación hacia el aprendizaje continuo y
-                        habilidades en el desarrollo de aplicaciones web modernas.</p>
-                </div>
-            </div>
-            <div class="side-info">
-                <h3 class="title-description" data-section="about-me" data-value="skills">Habilidades</h3>
-                <p data-section="about-me" data-value="skills-descriptions">Estoy especializado con las siguientes tecnologias tanto front-end como back-end
-                </p>
-                <div class="skills-list">
-                    <div class="skill-tag">Python</div>
-                    <div class="skill-tag">Django</div>
-                    <div class="skill-tag">Flask</div>
-                    <div class="skill-tag">PHP</div>
-                    <div class="skill-tag">Angular</div>
-                </div>
-            </div>
-        </div>
+    <section class="outro">
+        <p>Mira Lo que puedo hacer !</p>
     </section>
-    <section id="contact" class="contacto">
-        <div class="main-container">
-            <h2 class="heading heading-sc heading-sec__mb-med">
-                <span class="heading-sec__main heading-sec__main--lt" data-section="contact-form"
-                    data-value="header">Contacto</span>
-                <span class="heading-sec__sub heading-sec__sub--lt" data-section="contact-form" data-value="sentence">
-                    ¿Buscas llevar tu idea o proyecto al siguiente nivel? Contáctame para una asesoría gratuita y
-                    descubre cómo puedo ayudarte a hacerlo realidad.
-                </span>
-            </h2>
-        </div>
-        <div class="form-position">
-            <div class="container">
-
-                <form action="">
-                    <div class="form-group">
-                        <label for="name" data-section="contact-form" data-value="name">Nombre</label>
-                        <input type="text" class="contact-form-input" placeholder="Ingresa Tu Nombre"
-                            data-section="contact-form" data-placeholder="Input-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email" data-section="contact-form" data-value="email">Correo Electronico</label>
-                        <input type="text" class="contact-form-input" placeholder="Ingresa tu dirección de correo"
-                            data-section="contact-form" data-placeholder="Input-email">
-                    </div>
-                    <div class="form-group">
-                        <label for="mensage" data-section="contact-form" data-value="message">Mensaje</label>
-                        <textarea name="message" id="message" class="contact-form-input" required cols="30" rows="10"
-                            placeholder="Ingresa tu Mensaje" data-section="contact-form"
-                            data-placeholder="Input-email"></textarea>
-                    </div>
-                    <button type="submit" class="btn-form" data-section="contact-form"
-                        data-value="bottom">Enviar</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="grupo1">
-            <div class="box">
-                <figure>
-                    <a href="#"><img src="images/Logo De Edwin Santiago.png" alt="Logo de edwin Santiago"></a>
-                </figure>
-            </div>
-            <div class="box">
-                <H2 data-section="footer" data-value="about-me">SOBRE MÍ</H2>
-                <p data-section="footer" data-value="description">Estudiante de Ingeniería en Sistemas, proactivo,
-                    creativo, aprende rápido, desarrolla software sostenible.</p>
-            </div>
-            <div class="box">
-                <h2 data-section="footer" data-value="follow">SIGUEME</h2>
-                <div class="red-social">
-                    <a href=""><i class='bx bxl-linkedin'></i></a>
-                    <a href=""><i class='bx bxl-instagram-alt'></i></a>
-                    <a href=""><i class='bx bxl-github'></i></a>
-                    <a href=""><i class='bx bxl-whatsapp'></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="grupo2">
-            <small data-section="footer" data-value="copy">&copy; 2025 <b>Edwin Santiago</b> - Todos los Derechos
-                Reservados </small>
-        </div>
-    </footer>
-    <script src="scripts.js"></script>
+    <script type="module" src="logo.js"></script>
+    <script type="module" src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script type="module" src="scripts.js"></script>
 </body>
 
 </html>
